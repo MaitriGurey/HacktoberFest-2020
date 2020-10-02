@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+void findsubArray(long long arr[],int n,int k)
+{
+    long long sum=0,i=0,j=0,f=0;
+    while(i<n)
+    {
+        sum+=arr[i];
+        i++;
+       
+      if(sum>k)
+        {
+            while(sum>k&&j<i)
+            {
+               sum-=arr[j];
+               j++;
+            }
+        }
+       if(sum==k)
+         {
+             cout<<j+1<<" "<<i<<endl;
+             f=1;
+             break;
+         }
+         
+    }
+    if(f==0)
+     cout<<-1<<endl;
+}
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,k;
+	    cin>>n>>k;
+	    long long arr[n];
+	    for(int i=0;i<n;i++)
+	     cin>>arr[i];
+	    findsubArray(arr,n,k);
+	}
+	return 0;
+}
