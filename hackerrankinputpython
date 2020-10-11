@@ -1,0 +1,11 @@
+
+x,k = map(int,input().split())
+p=input()
+#x = float(input("At wich position should the polynomial be evaluated: "))
+
+r=eval(p.replace('x', str(x)))
+if r==k:
+    print("True")
+else:
+    print("False")
+
